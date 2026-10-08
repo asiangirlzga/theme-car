@@ -494,10 +494,10 @@ public class GameView extends View {
         float bw = roadX * 0.7f, bh = h * 0.035f, bx = lx - bw / 2f, by = h * 0.62f;
         text("SPEED", lx, by - bh * 0.6f, ts * 0.7f, theme == 2 ? 0xFF263238 : 0xFFFFFFFF);
         p.setColor(0x88000000);
-        r.set(bx, by, bx + bw, by + bh); c.drawRoundRect(r, bh / 2, bh / 2, p);
+        r.set(bx, by, bx + bw, by + bh); canvas.drawRoundRect(r, bh / 2, bh / 2, p);
         float f = Math.max(0f, Math.min(1f, (speed - minSpd) / (maxSpd - minSpd)));
         p.setColor(f < 0.4f ? 0xFF66BB6A : (f < 0.75f ? 0xFFFFA726 : 0xFFEF5350));
-        r.set(bx, by, bx + Math.max(bh, bw * f), by + bh); c.drawRoundRect(r, bh / 2, bh / 2, p);
+        r.set(bx, by, bx + Math.max(bh, bw * f), by + bh); canvas.drawRoundRect(r, bh / 2, bh / 2, p);
 
         // help on the right side
         float rx = roadX + roadW + roadX * 0.5f, hs = Math.min(h * 0.04f, roadX * 0.085f);
